@@ -81,15 +81,13 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
+            startActivity(new Intent(this, MapsActivity.class));
+        } else if (id == R.id.nav_gallery) {
             Fragment fragment = new BaresFragment();
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.contenedor, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_gallery) {
-            //this = (findViewById(R.id.contenedor)this)
-            //Intent intent = new Intent( MapFragment.class);
-            startActivity(new Intent(this, MapsActivity.class));
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
